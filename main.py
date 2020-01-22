@@ -15,7 +15,7 @@ def convert_lua_to_json(path_in="./Auc-ScanData.lua", path_out="./Auc-ScanData.j
     print "--------------------"
     print "convert_lua_to_json" # TODO: refactor to py3
     print "--------------------"
-    os.system("./convert.sh" + " " + path_in + " " + path_out)
+    os.system("./bin/convert.sh" + " " + path_in + " " + path_out)
 
 def convert_json_to_csv(path_in="./Auc-ScanData.json", path_out="./Auc-ScanData.csv"): 
     """Converts json to something that is csv-readable. 

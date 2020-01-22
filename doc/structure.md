@@ -150,3 +150,34 @@ And converting this is like ...
 ```bash
 ./convert.sh Auc-ScanData.lua Auc-ScanData.json
 ```
+
+## Conversion `.lua` to `.json`
+
+To convert the `.lua` to `.json` we slightly modify the original `.lua` file with the following changes.
+
+```lua
+local json = require("dkjson")
+
+...
+
+local AucScanDataJson = json.encode(AucScanData, {indent=true})
+print(AucScanDataJson)
+```
+
+We use some bash magic to do so
+
+```bash
+sed '1s;^;local json = require("dkjson");' Auc-ScanData.lua > ConvertScript.lua
+echo "local AucScanDataJson = json.encode(AucScanData, {indent=true})" >> ConvertScript.lua
+echo "print(AucScanDataJson)" >> ConvertScript.lua
+lua ConvertScript.lua > Auc-ScanData.json
+```
+
+## Your first `.lua` script
+
+Getting started is as easy as this
+
+```bash
+echo 'print("Hello World!")' > hello.lua 
+lua hello.lua
+```
