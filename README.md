@@ -54,10 +54,11 @@ We use some bash magic to do so
 sed '1s;^;local json = require("dkjson");' Auc-ScanData.lua > ConvertScript.lua
 echo "local AucScanDataJson = json.encode(AucScanData, {indent=true})" >> ConvertScript.lua
 echo "print(AucScanDataJson)" >> ConvertScript.lua
+lua ConvertScript.lua > Auc-ScanData.json
 ```
 
-Then we can run it with 
+Alternatively, you can run `convert.sh`
 
 ```bash
-lua ConvertScript.lua > Auc-ScanData.json
+sudo chmod 755
 ```

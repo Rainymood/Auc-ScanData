@@ -146,3 +146,7 @@ And converting this is like ...
 * "save lua to file"
 * "shell prepend file" 
 * "prepend text to file python"
+
+```bash
+./convert.sh Auc-ScanData.lua Auc-ScanData.json
+```
